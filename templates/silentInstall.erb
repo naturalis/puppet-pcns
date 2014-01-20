@@ -1,0 +1,181 @@
+# APC PowerChute Network Shutdown (PCNS) Silent Installer
+# 
+# This file contains parameters used by the PCNS silent
+# install option to support mass installation.
+#
+# Do not enclose values in quotes
+#
+# -------------------------------------------------------------------
+# Accept the EULA.
+#
+# This must be changed to YES to accept the EULA.  This is not case
+# sensitive.
+
+ACCEPT_EULA=NO
+#ACCEPT_EULA=YES
+
+# -------------------------------------------------------------------
+# The directory in which to install PCNS:
+# The default value /opt/APC is used if commented out or specified 
+# null value as "INSTALL_DIR="
+#
+# Values specified here are case sensitive.
+# -------------------------------------------------------------------
+
+INSTALL_DIR=/opt/APC
+
+# -------------------------------------------------------------------
+# The directory in which java is installed:
+# A PowerChute only private Java Runtime is used if commented out or
+# specified null value as "JAVA_DIR="
+#
+# PowerChute only private Java Runtime is NOT available on some 
+# Operating Systems.  See PowerChute Documentation for more details.
+#
+# This directory must specify a Java Runtime version 1.7.0 or later.
+#
+# Values specified here are case sensitive. 
+# -------------------------------------------------------------------
+
+JAVA_DIR=/usr/java/latest
+
+# -------------------------------------------------------------------
+# The silent install can register this host's IP address with the 
+# management card. If you are installing PCNS on more than 50 hosts
+# for one management card, consult the PCNS Installation Guide. Valid
+# values for this parameter are "no" or "yes".
+#
+# Values specified here are not case sensitive.
+# -------------------------------------------------------------------
+
+REGISTER_WITH_NMC=YES
+
+# -------------------------------------------------------------------
+# Uncomment and edit the following to specify the installation 
+# configuration.  The installation mode can have one of the 
+# following values:
+#
+# 'single': Register with a single NMC card.
+# 'redundant': Register with several NMC cards in a redundant  
+#	configuration.
+# 'parallel': Register with several NMC cards in a parallel 
+#	configuration.
+#
+# Values specified here are not case sensitive.
+# -------------------------------------------------------------------
+
+# MODE=single
+
+# -------------------------------------------------------------------
+# Fill in the below fields with the correct network configuration. Ensure
+# all the NMCs and servers are in the same network configuration.
+#
+# Valid values for NETWORKCONFIG are 'IPv4' and 'IPv6'
+#
+# Valid values for IPV6NETWORKCONFIG are 'Unicast' and 'Multicast'. This
+# parameter need not specified if the network configuration is IPv4
+# -------------------------------------------------------------------
+
+NETWORKCONFIG=IPv4
+#IPV6NETWORKCONFIG= 
+
+# -------------------------------------------------------------------
+# Uncomment and edit the following to specify the UPS Network 
+# Management cards to register with.
+# -------------------------------------------------------------------
+
+# IP_1=000.000.000.000
+# IP_2=000.000.000.000
+# IP_3=000.000.000.000
+# IP_4=000.000.000.000
+# IP_5=000.000.000.000
+# IP_6=000.000.000.000
+# IP_7=000.000.000.000
+# IP_8=000.000.000.000
+# IP_9=000.000.000.000
+
+# -------------------------------------------------------------------
+# Uncomment and edit the following to specify the UPS Outlet Group 
+# for each UPS NMC.  The value given is the outlet number.
+# -------------------------------------------------------------------
+
+# IP_1_Outlet=0
+# IP_2_Outlet=0
+# IP_3_Outlet=0
+# IP_4_Outlet=0
+# IP_5_Outlet=0
+# IP_6_Outlet=0
+# IP_7_Outlet=0
+# IP_8_Outlet=0
+# IP_9_Outlet=0
+
+# -------------------------------------------------------------------
+# This value specifies the UPS Network Management Port to use for
+# registration.  Valid values are 80, 443, and 5000 to 32768.
+# -------------------------------------------------------------------
+
+PORT=80
+
+# -------------------------------------------------------------------
+# This value specifies the protocol to use when registering with the
+# UPS Network Management Card.  Valid values are 'http' or 'https'.
+#
+# Values specified here are not case sensitive.
+# -------------------------------------------------------------------
+
+PROTOCOL=http
+
+# -------------------------------------------------------------------
+# When using the https protocol, SSL certificates are used to secure the 
+# connection.  By default the NMC uses a self signed certificate, 
+# which needs to be accepted.
+#
+# ACCEPTCERTS=YES 
+# Certificates which are self signed, or have some other issue, will
+# be automatically accepted (Recommended)
+#
+# ACCEPTCERTS=NO
+# Connection will only be established if the NMC has been configured
+# with a valid certificate.
+#
+# Values specified here are not case sensitive.
+# -------------------------------------------------------------------
+
+#ACCEPTCERTS=YES
+
+# -------------------------------------------------------------------
+# Fill in the below fields with the correct security information.
+# The Administrator User Name and Authentication Phrase must match
+# the settings of the Management Card in your UPS.
+#
+# Values specified here are case sensitive.
+# -------------------------------------------------------------------
+
+USERNAME=
+PASSWORD=
+AUTHENTICATION_PHRASE=
+
+# -------------------------------------------------------------------
+# Uncomment and edit the following only if you have more than one
+# network card installed locally. The below fields should specify
+# which local IP address to register with the UPS Network Management
+# Card. 
+# 
+# This field will be read if the network configuration is IPv4
+# -------------------------------------------------------------------
+
+#LOCAL_IP_ADDRESS=000.000.000.000
+
+# -------------------------------------------------------------------
+# The below fields should specify unicast/multicast address to register 
+# with the UPS Network Management Card. 
+# 
+# This field will be read if the network configuration is IPv6.
+#
+# Both Unicast and Multicast address are required if the IPV6NETWORKCONFIG
+# is 'Multicast'. If IPV6NETWORKCONFIG is 'Unicast' only Unicast address
+# is required.
+# -------------------------------------------------------------------
+
+#UNICAST_ADDRESS=
+#MULTICAST_ADDRESS=

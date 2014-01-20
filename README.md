@@ -1,7 +1,7 @@
-puppet-monophylizer
+puppet-pcns
 ===================
 
-Puppet module to install 
+Puppet module for powerchute network shutdown
 
 For more information using this tool: 
 
@@ -19,14 +19,7 @@ Dependencies
 
 Examples
 -------------
-Hiera yaml
-```
-sample1:
-    param: 'sampledata'
-```
-Puppet code
-```
-class { thisclass: }
+class { pcns: }
 ```
 Result
 -------------
@@ -42,5 +35,5 @@ The module has been tested on:
 
 Authors
 -------------
-Author Name <p.gomersbach@gmail.com>
+Author Name <hugo.vanduijn@naturalis.nl>
 
