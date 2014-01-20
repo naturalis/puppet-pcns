@@ -11,8 +11,8 @@
 # This must be changed to YES to accept the EULA.  This is not case
 # sensitive.
 
-ACCEPT_EULA=NO
-#ACCEPT_EULA=YES
+#ACCEPT_EULA=NO
+ACCEPT_EULA=YES
 
 # -------------------------------------------------------------------
 # The directory in which to install PCNS:
@@ -37,7 +37,7 @@ INSTALL_DIR=/opt/APC
 # Values specified here are case sensitive. 
 # -------------------------------------------------------------------
 
-JAVA_DIR=/usr/java/latest
+JAVA_DIR=/opt/jre1.7.0_45
 
 # -------------------------------------------------------------------
 # The silent install can register this host's IP address with the 
@@ -64,7 +64,7 @@ REGISTER_WITH_NMC=YES
 # Values specified here are not case sensitive.
 # -------------------------------------------------------------------
 
-# MODE=single
+MODE=single
 
 # -------------------------------------------------------------------
 # Fill in the below fields with the correct network configuration. Ensure
@@ -84,7 +84,7 @@ NETWORKCONFIG=IPv4
 # Management cards to register with.
 # -------------------------------------------------------------------
 
-# IP_1=000.000.000.000
+IP_1=<%= @NMCIP -%>
 # IP_2=000.000.000.000
 # IP_3=000.000.000.000
 # IP_4=000.000.000.000
@@ -141,7 +141,7 @@ PROTOCOL=http
 # Values specified here are not case sensitive.
 # -------------------------------------------------------------------
 
-#ACCEPTCERTS=YES
+ACCEPTCERTS=YES
 
 # -------------------------------------------------------------------
 # Fill in the below fields with the correct security information.
@@ -151,9 +151,9 @@ PROTOCOL=http
 # Values specified here are case sensitive.
 # -------------------------------------------------------------------
 
-USERNAME=
-PASSWORD=
-AUTHENTICATION_PHRASE=
+USERNAME=<%= @NMCusername -%>
+PASSWORD=<%= @NMCpassword -%>
+AUTHENTICATION_PHRASE=<%= @NMCauthenticationPhrase -%>
 
 # -------------------------------------------------------------------
 # Uncomment and edit the following only if you have more than one
